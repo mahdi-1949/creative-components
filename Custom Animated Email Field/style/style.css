@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    align-items: justify;
+    justify-content: center;
+    text-align: center;
+    background: #0f1624;
+    user-select: none;
+}
+
+.center {
+    position: relative;
+    width: 500px;
+    background: #141e30;
+    padding: 50px;
+    border-radius: 6px;
+}
+
+header {
+    color: #b7c6e1;
+    font-family: 'Roboto';
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.input-field {
+    height: 60px;
+    width: 100%;
+    position: relative;
+    font-family: sans-serif;
+}
+
+input.email {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    font-size: 22px;
+    color: #edf1f7;
+    background: #1e2d48;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    padding: 20px 0 0 20px;
+}
+
+.inner-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    line-height: 60px;
+    font-size: 24px;
+    color: #a5b7d9;
+    padding-left: 20px;
+    pointer-events: none;
+    transition: all .4s;
+}
+
+input.email:focus~.inner-text,
+input.email:valid~.inner-text {
+    transform: translateY(-13px);
+    font-size: 19px;
+}
+
+.button:before,
+.button:after {
+    position: absolute;
+    content: 'send';
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 120px;
+    height: 60px;
+    border-radius: 6px;
+    line-height: 60px;
+    font-size: 25px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.button:before {
+    content: 'send';
+    color: #dbe2f0;
+    background: #2d426c;
+}
+
+.button:after {
+    content: 'Email Sent Successfully';
+    overflow: hidden;
+    color: #d5e9f6;
+    background: #2573a7;
+}
+
+input.email:focus~.button:before,
+input.email:valid~.button:before {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+input.email:invalid~.button:before {
+    pointer-events: none;
+}
+
+input.email:valid~.button:before {
+    color: #d5e9f6;
+    background: #2573a7;
+}
